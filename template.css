@@ -723,20 +723,23 @@ section {
 }
 
 .service-icon {
-	width: 64px;
+	min-width: 64px;      /* Menjaga ukuran standar 64px untuk 1 ikon */
+	width: fit-content;   /* Membiarkan kotak melebar otomatis jika menampung 2 ikon */
 	height: 64px;
+	padding: 0 12px;      /* Memberi ruang bernapas di sisi kiri dan kanan ikon */
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 8px;             /* Memberi jarak otomatis jika ada lebih dari 1 ikon */
 	background-color: var(--color-primary-light);
 	border-radius: var(--border-radius);
 	margin-bottom: var(--space-sm);
 	color: var(--color-primary);
 }
 
-.service-icon svg {
-	width: 32px;
-	height: 32px;
+/* Ganti pemanggil 'svg' menjadi 'i' karena Devicon menggunakan tag <i> */
+.service-icon i {
+	font-size: 38px !important; /* Memaksa ukuran ikon menjadi 38px agar proporsional di dalam kotak */
 }
 
 .service-card p {
